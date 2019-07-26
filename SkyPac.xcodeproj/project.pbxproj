@@ -12,6 +12,9 @@
 		9DA0FAF722EAF5DE00C243BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAF522EAF5DE00C243BD /* Main.storyboard */; };
 		9DA0FAF922EAF5E200C243BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAF822EAF5E200C243BD /* Assets.xcassets */; };
 		9DA0FAFC22EAF5E200C243BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAFA22EAF5E200C243BD /* LaunchScreen.storyboard */; };
+		9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */; };
+		9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */; };
+		9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		9DA0FAF822EAF5E200C243BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DA0FAFB22EAF5E200C243BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DA0FAFD22EAF5E200C243BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPFlightTableViewCell.swift; sourceTree = "<group>"; };
+		9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPFlight.swift; path = SkyPac/View/ViewControllers/SPFlight.swift; sourceTree = SOURCE_ROOT; };
+		9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPFlightTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,72 @@
 			isa = PBXGroup;
 			children = (
 				9DA0FAF122EAF5DE00C243BD /* AppDelegate.swift */,
-				9DA0FAF322EAF5DE00C243BD /* ViewController.swift */,
-				9DA0FAF522EAF5DE00C243BD /* Main.storyboard */,
-				9DA0FAF822EAF5E200C243BD /* Assets.xcassets */,
-				9DA0FAFA22EAF5E200C243BD /* LaunchScreen.storyboard */,
+				9DA0FB0722EAFA0D00C243BD /* Networking */,
+				9DA0FB0822EAFA2300C243BD /* Model */,
+				9DA0FB0522EAF9D800C243BD /* View */,
+				9DA0FB2122EAFDA200C243BD /* Utils */,
+				9DA0FB0622EAF9FD00C243BD /* SupportingFiles */,
 				9DA0FAFD22EAF5E200C243BD /* Info.plist */,
 			);
 			path = SkyPac;
+			sourceTree = "<group>";
+		};
+		9DA0FB0522EAF9D800C243BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9DA0FB0922EAFA3900C243BD /* ViewControllers */,
+				9DA0FB0A22EAFA4300C243BD /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9DA0FB0622EAF9FD00C243BD /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9DA0FAF522EAF5DE00C243BD /* Main.storyboard */,
+				9DA0FAF822EAF5E200C243BD /* Assets.xcassets */,
+				9DA0FAFA22EAF5E200C243BD /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9DA0FB0722EAFA0D00C243BD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9DA0FB0822EAFA2300C243BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DA0FB0922EAFA3900C243BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9DA0FAF322EAF5DE00C243BD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9DA0FB0A22EAFA4300C243BD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */,
+				9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9DA0FB2122EAFDA200C243BD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +189,7 @@
 			files = (
 				9DA0FAFC22EAF5E200C243BD /* LaunchScreen.storyboard in Resources */,
 				9DA0FAF922EAF5E200C243BD /* Assets.xcassets in Resources */,
+				9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */,
 				9DA0FAF722EAF5DE00C243BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +201,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */,
 				9DA0FAF422EAF5DE00C243BD /* ViewController.swift in Sources */,
 				9DA0FAF222EAF5DE00C243BD /* AppDelegate.swift in Sources */,
+				9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
