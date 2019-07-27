@@ -9,6 +9,14 @@
 import Foundation
 
 struct SPFlight: Decodable {
+    var data: SPFlightDetails?
+}
+
+struct SPFlightDetails: Decodable {
     
+    var id: String?
+    var countryFrom: String?
+    var countryTo: String?
+    var price: String?
 }
 

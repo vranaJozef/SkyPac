@@ -10,4 +10,7 @@ import UIKit
 
 class SPFlightTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var flightImageView: UIImageView!
+    @IBOutlet weak var flightDestinationLabel: UILabel!
+    @IBOutlet weak var flightTimeLabel: UILabel!
 }

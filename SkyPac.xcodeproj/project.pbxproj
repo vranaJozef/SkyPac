@@ -15,6 +15,8 @@
 		9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */; };
 		9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */; };
 		9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */; };
+		AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68322EB10FF00BE2600 /* Date+Utils.swift */; };
+		AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68522EB257C00BE2600 /* URL+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPFlightTableViewCell.swift; sourceTree = "<group>"; };
 		9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPFlight.swift; path = SkyPac/View/ViewControllers/SPFlight.swift; sourceTree = SOURCE_ROOT; };
 		9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPFlightTableViewCell.xib; sourceTree = "<group>"; };
+		AC06C68322EB10FF00BE2600 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		AC06C68522EB257C00BE2600 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 		9DA0FB2122EAFDA200C243BD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AC06C68322EB10FF00BE2600 /* Date+Utils.swift */,
+				AC06C68522EB257C00BE2600 /* URL+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				9DA0FAF422EAF5DE00C243BD /* ViewController.swift in Sources */,
 				9DA0FAF222EAF5DE00C243BD /* AppDelegate.swift in Sources */,
 				9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */,
+				AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */,
+				AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
