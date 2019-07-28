@@ -12,10 +12,8 @@ class ViewController: UIViewController, SPFlightManagerDelegate {
 
     @IBOutlet weak var flightTipsTableView: UITableView!
     let cellID = "flightCell"
-    var popularFlights: [SPFlight]?
     let networkManager = SPFlightManager()
     var flight: SPFlight?
-    var destinationImage: UIImage?
     
     // MARK: - Lifecycle
     
@@ -24,6 +22,13 @@ class ViewController: UIViewController, SPFlightManagerDelegate {
         
         self.flightTipsTableView.register(UINib(nibName: "SPFlightTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
         networkManager.delegate = self
+        if Reachability.isConnectedToNetwork() {
+            self.networkManager.getAllSPFlight { (error) in
+                if error == nil {
+                    
+                }
+            }
+        }
     }
     
     // MARK: - FlightManagerDelegate
@@ -31,24 +36,8 @@ class ViewController: UIViewController, SPFlightManagerDelegate {
     func updateSPFlight(_ flight: SPFlight?) {
         if let flight = flight {
             self.flight = flight
-            self.networkManager.downloadImage(from: URL(string: (flight.flightData![0].mapIdTo!))!)
-                DispatchQueue.main.async {
-                    self.flightTipsTableView.reloadData()
-                }
-            }
-    }
-    
-    func updateImage(_ image: UIImage?) {
-        DispatchQueue.main.async {
-            self.destinationImage = image
-            self.flightTipsTableView.reloadData()
-        }
-    }
-    
-    @IBAction func onReload() {
-        self.networkManager.getAllSPFlight { (error) in
-            if error == nil {
-                
+            DispatchQueue.main.async {
+                self.flightTipsTableView.reloadData()
             }
         }
     }
@@ -57,14 +46,16 @@ class ViewController: UIViewController, SPFlightManagerDelegate {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.flight?.flightData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.flightTipsTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! SPFlightTableViewCell
         cell.flightDepartureLabel.text = self.flight?.flightData![indexPath.row].countryFrom?.name
-        cell.flightDestinationLabel.text = self.flight?.flightData![indexPath.row].countryTo?.name
-        cell.flightImageView.image = self.destinationImage
+        cell.flightDestinationLabel.text = self.flight?.flightData![indexPath.row].countryTo?.name        
+        let key = self.flight?.flightData![indexPath.row].mapIdTo!
+        cell.flightImageView.imageFromServerURL("https://images.kiwi.com/photos/610x251/\(key!).jpg", placeHolder: nil)
+        
         return cell
     }
 }

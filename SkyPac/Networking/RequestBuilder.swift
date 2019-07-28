@@ -19,7 +19,7 @@ class RequestBuilder {
                           "sort": "popularity",
                           "asc":"0",
                           "select_airlines_exclude":"true",
-                          "fly_from": "UK",
+                          "fly_from": "SK",
                           "fly_to": "",
                           "date_from": dateFrom,
                           "date_to": dateTo,

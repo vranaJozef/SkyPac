@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct SPFlight: Decodable {
     var searchID: String?
@@ -17,7 +18,6 @@ struct SPFlight: Decodable {
     enum CodingKeys: String, CodingKey {
         case searchID = "search_id"
         case flightData = "data"
-        case currency = "currency"
     }
 }
 
@@ -27,16 +27,15 @@ struct FlightData: Decodable {
     var countryFrom: Country?
     var countryTo: Country?
     var departureTimeUTC: Int?
-    var price: Int?
     var mapIdfrom: String?
     var mapIdTo: String?
+    var mapImage: UIImage?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case countryFrom = "countryFrom"
         case countryTo = "countryTo"
         case departureTimeUTC = "dTimeUTC"
-        case price = "price"
         case mapIdfrom = "mapIdfrom"
         case mapIdTo = "mapIdto"
     }
