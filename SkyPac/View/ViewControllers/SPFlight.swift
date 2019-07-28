@@ -10,34 +10,62 @@ import Foundation
 import UIKit
 
 struct SPFlight: Decodable {
-    var searchID: String?
     var flightData: [FlightData]?
-    var time: Int?
-    var currency: String?
     
     enum CodingKeys: String, CodingKey {
-        case searchID = "search_id"
         case flightData = "data"
     }
 }
 
-struct FlightData: Decodable {
+struct FlightData: Decodable, Hashable {
+    
+    static func == (lhs: FlightData, rhs: FlightData) -> Bool {
+        return lhs.mapIdfrom == rhs.mapIdfrom && lhs.mapIdTo == rhs.mapIdTo
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(mapIdfrom)
+        hasher.combine(mapIdTo)
+    }
     
     var id: String?
     var countryFrom: Country?
     var countryTo: Country?
     var departureTimeUTC: Int?
+    var arrivalTimeUTC: Int?
     var mapIdfrom: String?
     var mapIdTo: String?
-    var mapImage: UIImage?
+    var conversion: Conversion?
+    var flyDuration: String?
+    var route: [Route]?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case countryFrom = "countryFrom"
         case countryTo = "countryTo"
         case departureTimeUTC = "dTimeUTC"
+        case arrivalTimeUTC = "aTimeUTC"
         case mapIdfrom = "mapIdfrom"
         case mapIdTo = "mapIdto"
+        case conversion = "conversion"
+        case flyDuration = "fly_duration"
+        case route = "route"
+    }
+}
+
+struct Route: Decodable {
+    var flyNumber: Int?
+
+    enum CodinkKeys: String, CodingKey {
+        case flyNumber = "flight_no"
+    }
+}
+
+struct Conversion: Decodable {
+    var currency: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case currency = "EUR"
     }
 }
 

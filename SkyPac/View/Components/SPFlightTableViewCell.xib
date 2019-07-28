@@ -17,16 +17,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AfI-sj-2aZ">
-                    <rect key="frame" x="8" y="8" width="524" height="248.5"/>
+                    <rect key="frame" x="8" y="8" width="524" height="222.5"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfq-nn-ONU">
-                    <rect key="frame" x="8" y="264.5" width="115" height="20.5"/>
+                    <rect key="frame" x="8" y="238.5" width="115" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrival city" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wp-Qk-K0D">
-                    <rect key="frame" x="158" y="264.5" width="86" height="20.5"/>
+                    <rect key="frame" x="158" y="237" width="86" height="24"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -44,43 +44,56 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWT-d8-0Ee" userLabel="Price">
-                    <rect key="frame" x="518.5" y="264.5" width="13.5" height="24"/>
+                    <rect key="frame" x="518.5" y="237" width="13.5" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF5-dZ-USn">
-                    <rect key="frame" x="131" y="264.5" width="19" height="21"/>
+                    <rect key="frame" x="131" y="238.5" width="19" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-wD-ns5">
+                    <rect key="frame" x="8" y="267" width="104" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Tde-Vi-JEI" firstAttribute="top" secondItem="3Wp-Qk-K0D" secondAttribute="bottom" constant="8" id="6cz-3C-8Ih"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rJo-tE-Qva" secondAttribute="bottom" constant="8" id="7aX-72-vIY"/>
+                <constraint firstItem="wF5-dZ-USn" firstAttribute="centerY" secondItem="Tfq-nn-ONU" secondAttribute="centerY" id="EdZ-yg-XGo"/>
                 <constraint firstAttribute="trailing" secondItem="SWT-d8-0Ee" secondAttribute="trailing" constant="8" id="I1v-PS-YeV"/>
                 <constraint firstItem="3Wp-Qk-K0D" firstAttribute="leading" secondItem="wF5-dZ-USn" secondAttribute="trailing" constant="8" id="JPe-VI-ReP"/>
-                <constraint firstItem="rJo-tE-Qva" firstAttribute="top" secondItem="Tfq-nn-ONU" secondAttribute="bottom" constant="8" id="JSc-Sk-lHD"/>
+                <constraint firstItem="3Wp-Qk-K0D" firstAttribute="centerY" secondItem="Tfq-nn-ONU" secondAttribute="centerY" id="JRT-nO-CtJ"/>
                 <constraint firstItem="rJo-tE-Qva" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="JkS-ag-vpX"/>
                 <constraint firstItem="AfI-sj-2aZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="KaU-FH-6ca"/>
-                <constraint firstItem="3Wp-Qk-K0D" firstAttribute="top" secondItem="AfI-sj-2aZ" secondAttribute="bottom" constant="8" id="NmJ-xD-V3E"/>
                 <constraint firstItem="Tfq-nn-ONU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="RDF-eb-ez5"/>
-                <constraint firstItem="SWT-d8-0Ee" firstAttribute="top" secondItem="AfI-sj-2aZ" secondAttribute="bottom" constant="8" id="T8L-dB-bEh"/>
                 <constraint firstItem="AfI-sj-2aZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="TA6-Ak-MbO"/>
                 <constraint firstItem="wF5-dZ-USn" firstAttribute="leading" secondItem="Tfq-nn-ONU" secondAttribute="trailing" constant="8" id="Tg0-i7-m4h"/>
-                <constraint firstItem="wF5-dZ-USn" firstAttribute="top" secondItem="AfI-sj-2aZ" secondAttribute="bottom" constant="8" id="cfk-EL-lqX"/>
+                <constraint firstItem="SWT-d8-0Ee" firstAttribute="centerY" secondItem="3Wp-Qk-K0D" secondAttribute="centerY" id="aiY-HZ-tga"/>
+                <constraint firstItem="Tde-Vi-JEI" firstAttribute="centerY" secondItem="rJo-tE-Qva" secondAttribute="centerY" id="fhz-AU-haj"/>
+                <constraint firstItem="rJo-tE-Qva" firstAttribute="top" secondItem="8pt-wD-ns5" secondAttribute="bottom" constant="8" id="ggo-By-MaE"/>
+                <constraint firstItem="8pt-wD-ns5" firstAttribute="top" secondItem="Tfq-nn-ONU" secondAttribute="bottom" constant="8" id="i2V-aj-oHh"/>
                 <constraint firstItem="Tde-Vi-JEI" firstAttribute="leading" secondItem="rJo-tE-Qva" secondAttribute="trailing" constant="8" id="k2g-80-eAF"/>
+                <constraint firstItem="SWT-d8-0Ee" firstAttribute="height" secondItem="3Wp-Qk-K0D" secondAttribute="height" id="lce-hp-zMo"/>
                 <constraint firstItem="Tfq-nn-ONU" firstAttribute="top" secondItem="AfI-sj-2aZ" secondAttribute="bottom" constant="8" id="moV-Tc-khU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AfI-sj-2aZ" secondAttribute="trailing" constant="8" id="oXv-Ti-G5K"/>
+                <constraint firstItem="8pt-wD-ns5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="vds-kr-pGd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="departureDate" destination="8pt-wD-ns5" id="9iG-KO-2mg"/>
+                <outlet property="flightArrivalLabel" destination="3Wp-Qk-K0D" id="b7r-SO-Fn8"/>
+                <outlet property="flightArrivalTime" destination="Tde-Vi-JEI" id="c48-5H-w8r"/>
                 <outlet property="flightDepartureLabel" destination="Tfq-nn-ONU" id="qz5-fZ-Be8"/>
-                <outlet property="flightDestinationLabel" destination="3Wp-Qk-K0D" id="Oug-5s-b7A"/>
+                <outlet property="flightDepartureTime" destination="rJo-tE-Qva" id="bmg-dP-agU"/>
                 <outlet property="flightImageView" destination="AfI-sj-2aZ" id="aKC-mD-WzF"/>
+                <outlet property="price" destination="SWT-d8-0Ee" id="KZq-8z-3ra"/>
             </connections>
             <point key="canvasLocation" x="228.98550724637684" y="-67.299107142857139"/>
         </view>

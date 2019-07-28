@@ -28,6 +28,10 @@
 		9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */; };
 		AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68322EB10FF00BE2600 /* Date+Utils.swift */; };
 		AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68522EB257C00BE2600 /* URL+Utils.swift */; };
+		AC06C69C22EDA77D00BE2600 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */; };
+		AC06C69E22EDB48900BE2600 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */; };
+		AC06C6A022EDE29000BE2600 /* FlightDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */; };
+		AC06C6A222EDF7A700BE2600 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPFlightTableViewCell.xib; sourceTree = "<group>"; };
 		AC06C68322EB10FF00BE2600 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		AC06C68522EB257C00BE2600 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };
+		AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
+		AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
+		AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailVC.swift; sourceTree = "<group>"; };
+		AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA0FAF322EAF5DE00C243BD /* ViewController.swift */,
+				AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				AC06C68322EB10FF00BE2600 /* Date+Utils.swift */,
+				AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */,
+				AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */,
+				AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */,
 				AC06C68522EB257C00BE2600 /* URL+Utils.swift */,
 			);
 			path = Utils;
@@ -246,16 +258,20 @@
 				9D66713122EC30F6003919BF /* Result.swift in Sources */,
 				9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */,
 				9DA0FAF422EAF5DE00C243BD /* ViewController.swift in Sources */,
+				AC06C69E22EDB48900BE2600 /* UIImageView+Utils.swift in Sources */,
 				9DA0FAF222EAF5DE00C243BD /* AppDelegate.swift in Sources */,
 				9D66713422EC30F6003919BF /* CustomError.swift in Sources */,
 				9D66713522EC30F6003919BF /* Client.swift in Sources */,
 				9D66713722EC30F6003919BF /* Reachability.swift in Sources */,
 				9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */,
+				AC06C69C22EDA77D00BE2600 /* Int+Utils.swift in Sources */,
+				AC06C6A022EDE29000BE2600 /* FlightDetailVC.swift in Sources */,
 				AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */,
 				9D66713322EC30F6003919BF /* NotesManager.swift in Sources */,
 				9D66713022EC30F6003919BF /* APIError.swift in Sources */,
 				AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */,
 				9D66712F22EC30F6003919BF /* Resource.swift in Sources */,
+				AC06C6A222EDF7A700BE2600 /* Array+Utils.swift in Sources */,
 				9D66713922EC30F6003919BF /* RequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ class RequestBuilder {
                           "fly_to": "",
                           "date_from": dateFrom,
                           "date_to": dateTo,
-                          "limit":"5"]
+                          "limit":"50"]
         resource.queryItems = queryItems
         return resource
     }       
