@@ -54,7 +54,7 @@
 		9DA0FAFB22EAF5E200C243BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DA0FAFD22EAF5E200C243BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA0FB0322EAF9C800C243BD /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
-		9DA0FB1F22EAFD0B00C243BD /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flight.swift; path = SkyPac/View/ViewControllers/Flight.swift; sourceTree = SOURCE_ROOT; };
+		9DA0FB1F22EAFD0B00C243BD /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flight.swift; path = SkyPac/Model/Flight.swift; sourceTree = SOURCE_ROOT; };
 		9DA0FB2222EB00B300C243BD /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		AC06C68322EB10FF00BE2600 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		AC06C68522EB257C00BE2600 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };

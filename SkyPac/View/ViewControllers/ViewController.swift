@@ -45,9 +45,11 @@ class ViewController: UIViewController, FlightManagerDelegate {
     }
 
     func handleError(error: WebError<APIError>) {
-        self.activityIndicator.stopAnimating()
-        self.flightsTableView.isHidden = true
-        self.errorLabel.text = error.localizedDescription
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.flightsTableView.isHidden = true
+            self.errorLabel.text = error.localizedDescription
+        }
     }
 
     // MARK: - Navigation
@@ -91,7 +93,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = self.view.frame.height * 0.5
+        var height: CGFloat = 0
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait:
+            height = self.view.frame.height * 0.5
+            break
+        case .landscapeLeft, .landscapeRight:
+            height = self.view.frame.height * 0.8
+            break
+        default:
+            height = 0
+        }
         return height
     }
 }
