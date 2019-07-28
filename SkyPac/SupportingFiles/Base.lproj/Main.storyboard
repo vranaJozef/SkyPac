@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IOR-5Y-RwQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flightCell" id="1H0-T7-hjp" customClass="SPFlightTableViewCell" customModule="SkyPac" customModuleProvider="target">
@@ -36,12 +36,22 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9Wc-sm-fe9"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbl-Tg-eJu">
+                                <rect key="frame" x="99" y="64" width="49" height="30"/>
+                                <state key="normal" title="refresh"/>
+                                <connections>
+                                    <action selector="onReload" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdQ-3N-9WL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nbl-Tg-eJu" secondAttribute="trailing" symbolic="YES" id="7TV-yE-7sw"/>
+                            <constraint firstItem="IOR-5Y-RwQ" firstAttribute="top" secondItem="Nbl-Tg-eJu" secondAttribute="bottom" constant="8" id="CP6-si-0ax"/>
                             <constraint firstItem="IOR-5Y-RwQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W8O-e8-IBA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IOR-5Y-RwQ" secondAttribute="bottom" id="XlZ-xu-0YH"/>
-                            <constraint firstItem="IOR-5Y-RwQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Yfj-qB-Qwm"/>
+                            <constraint firstItem="Nbl-Tg-eJu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aDP-Ll-M4E"/>
+                            <constraint firstItem="Nbl-Tg-eJu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="daP-xo-l19"/>
                             <constraint firstItem="IOR-5Y-RwQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lLS-rL-wHb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

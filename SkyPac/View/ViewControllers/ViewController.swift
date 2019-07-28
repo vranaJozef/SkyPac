@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SPFlightManagerDelegate {
 
     @IBOutlet weak var flightTipsTableView: UITableView!
     let cellID = "flightCell"
     var popularFlights: [SPFlight]?
+    let networkManager = SPFlightManager()
+    var flight: SPFlight?
+    var destinationImage: UIImage?
     
     // MARK: - Lifecycle
     
@@ -20,49 +23,49 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.flightTipsTableView.register(UINib(nibName: "SPFlightTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
-        let baseURL = URL(string: "https://api.skypicker.com/flights")!
-        let dateFrom = Date().ddmmYYYYFormatter()
-        let dateTo = Date().addOneDay()        
-        let queryItems = ["fly_from": "UK",
-                          "fly_to": "JFK",
-                          "date_from": dateFrom,
-                          "date_to": dateTo,
-                          "sort": "popularity"]
-        let finalURL = baseURL.addURLParameters(items: queryItems)
-        var request = URLRequest(url: finalURL)
-        request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                if let data = data {
-                    do{
-                        let jsonResponse = try JSONSerialization.jsonObject(with:
-                            data, options: [])
-                        guard let jsonArray = jsonResponse as? [String: Any] else {
-                            return
-                        }
-                        let picked = jsonArray["data"] as! [Any?]
-                        print(picked[0])
-                    } catch let parsingError {
-                        print("Error", parsingError)
-                    }
+        networkManager.delegate = self
+    }
+    
+    // MARK: - FlightManagerDelegate
+    
+    func updateSPFlight(_ flight: SPFlight?) {
+        if let flight = flight {
+            self.flight = flight
+            self.networkManager.downloadImage(from: URL(string: (flight.flightData![0].mapIdTo!))!)
+                DispatchQueue.main.async {
+                    self.flightTipsTableView.reloadData()
                 }
             }
+    }
+    
+    func updateImage(_ image: UIImage?) {
+        DispatchQueue.main.async {
+            self.destinationImage = image
+            self.flightTipsTableView.reloadData()
         }
-        task.resume()
+    }
+    
+    @IBAction func onReload() {
+        self.networkManager.getAllSPFlight { (error) in
+            if error == nil {
+                
+            }
+        }
     }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
             
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.flightTipsTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! SPFlightTableViewCell
-        cell.flightTimeLabel.text = "\(indexPath.row)"
+        cell.flightDepartureLabel.text = self.flight?.flightData![indexPath.row].countryFrom?.name
+        cell.flightDestinationLabel.text = self.flight?.flightData![indexPath.row].countryTo?.name
+        cell.flightImageView.image = self.destinationImage
         return cell
     }
-    
-    
 }
+
