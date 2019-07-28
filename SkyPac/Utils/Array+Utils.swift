@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-    func uniq<S: Sequence, E: Hashable>(source: S) -> [E] where E==S.Iterator.Element {
+    func removeDuplicates<S: Sequence, E: Hashable>(source: S) -> [E] where E==S.Iterator.Element {
         var seen: [E:Bool] = [:]
         return source.filter({ (v) -> Bool in
             return seen.updateValue(true, forKey: v) == nil

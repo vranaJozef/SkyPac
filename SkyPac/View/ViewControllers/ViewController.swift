@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, SPFlightManagerDelegate {
+class ViewController: UIViewController, FlightManagerDelegate {
 
-    @IBOutlet weak var flightTipsTableView: UITableView!
+    @IBOutlet weak var flightsTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     let cellID = "flightCell"
-    let networkManager = SPFlightManager()
+    let networkManager = FlightManager()
     var flight: [FlightData]?
     
     // MARK: - Lifecycle
@@ -20,69 +22,77 @@ class ViewController: UIViewController, SPFlightManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.flightTipsTableView.register(UINib(nibName: "SPFlightTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
+        self.flightsTableView.register(UINib(nibName: "FlightTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
         networkManager.delegate = self
+        self.activityIndicator.startAnimating()
         if Reachability.isConnectedToNetwork() {
-            self.networkManager.getAllSPFlight { (error) in
-                if error == nil {                    
+            self.networkManager.getAllFlights { (error) in
+                if let error = error {
+                    self.handleError(error: error)
                 }
             }
+        } else {
+            self.handleError(error: .noInternetConnection)
         }
     }
+    
+    func updateUI() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.flightsTableView.isHidden = false
+            self.flightsTableView.reloadData()
+        }
+    }
+
+    func handleError(error: WebError<APIError>) {
+        self.activityIndicator.stopAnimating()
+        self.flightsTableView.isHidden = true
+        self.errorLabel.text = error.localizedDescription
+    }
+
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "flightDetail" {
             let flightDetailVC = segue.destination as! FlightDetailVC
             if let flight = self.flight {
                 let indexPath = sender as! IndexPath
-                flightDetailVC.flightInfo = flight[indexPath.row]
+                flightDetailVC.currentFlightInfo = flight[indexPath.row]
             }
         }
     }
+    
     // MARK: - FlightManagerDelegate
     
-    func updateSPFlight(_ flight: [FlightData]?) {
+    func updateFlight(_ flight: [FlightData]?) {
         if let flight = flight {
             self.flight = flight            
-            DispatchQueue.main.async {
-                self.flightTipsTableView.reloadData()
-            }
-        }
-    }
-    
-    @IBAction func onRefresh(_ sender: UIBarButtonItem) {
-        self.networkManager.getAllSPFlight { (error) in
-            if error == nil {
-            }
+            self.updateUI()
         }
     }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-            
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.flight?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.flightTipsTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! SPFlightTableViewCell
-        cell.flightDepartureLabel.text = self.flight?[indexPath.row].countryFrom?.name
-        cell.flightArrivalLabel.text = self.flight?[indexPath.row].countryTo?.name
-        cell.flightDepartureTime.text = self.flight![indexPath.row].departureTimeUTC?.convertToDDMMYYYY()
-        cell.flightArrivalTime.text = self.flight![indexPath.row].arrivalTimeUTC?.convertToDDMMYYYY()
-        cell.departureDate.text = Date().ddmmYYYYFormatter()
-        let locale = NSLocale(localeIdentifier: "EUR")
-        let currencySymbol = locale.displayName(forKey: NSLocale.Key.currencySymbol, value: "EUR")
-        cell.price.text = String("\(self.flight![indexPath.row].conversion!.currency!)\(currencySymbol!)")
-        let key = self.flight?[indexPath.row].mapIdTo!
-        cell.flightImageView.imageFromServerURL("https://images.kiwi.com/photos/610x251/\(key!).jpg", placeHolder: nil)
+        let cell = self.flightsTableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! FlightTableViewCell
+        cell.configure(self.flight?[indexPath.row])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.flightTipsTableView.deselectRow(at: indexPath, animated: true)
+        self.flightsTableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "flightDetail", sender: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height = self.view.frame.height * 0.5
+        return height
     }
 }
 

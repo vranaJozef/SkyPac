@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct SPFlight: Decodable {
+struct Flight: Decodable {
     var flightData: [FlightData]?
     
     enum CodingKeys: String, CodingKey {
@@ -19,6 +19,8 @@ struct SPFlight: Decodable {
 
 struct FlightData: Decodable, Hashable {
     
+    // MARK: - Hashable protocol
+    
     static func == (lhs: FlightData, rhs: FlightData) -> Bool {
         return lhs.mapIdfrom == rhs.mapIdfrom && lhs.mapIdTo == rhs.mapIdTo
     }
@@ -27,6 +29,8 @@ struct FlightData: Decodable, Hashable {
         hasher.combine(mapIdfrom)
         hasher.combine(mapIdTo)
     }
+    
+    // // MARK: - Properties
     
     var id: String?
     var countryFrom: Country?
@@ -38,6 +42,7 @@ struct FlightData: Decodable, Hashable {
     var conversion: Conversion?
     var flyDuration: String?
     var route: [Route]?
+    var baggage: Baggage?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -50,14 +55,17 @@ struct FlightData: Decodable, Hashable {
         case conversion = "conversion"
         case flyDuration = "fly_duration"
         case route = "route"
+        case baggage = "bags_price"
     }
 }
 
 struct Route: Decodable {
-    var flyNumber: Int?
+    var cityFrom: String?
+    var cityTo: String?
 
     enum CodinkKeys: String, CodingKey {
-        case flyNumber = "flight_no"
+        case cityFrom = "city_from"
+        case cityTo = "city_to"
     }
 }
 
@@ -76,6 +84,16 @@ struct Country: Decodable {
     enum CodingKeys: String, CodingKey {
         case code = "code"
         case name = "name"
+    }
+}
+
+struct Baggage: Decodable {
+    var big: Double?
+    var small: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case big = "2"
+        case small = "1"
     }
 }
 

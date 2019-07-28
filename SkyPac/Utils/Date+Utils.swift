@@ -16,7 +16,7 @@ extension Date {
         return dateFormatter
     }
     
-    func HHMMSS() -> String {
+    func hhMMSSFormatter() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:MM"
         return dateFormatter.string(from: self)        
@@ -33,10 +33,5 @@ extension Date {
         guard let adjustedDate = Calendar.current.date(byAdding: .day, value: 1, to: self) else { return nil }
         let convertedDate = dateFormatter.string(from: adjustedDate)
         return convertedDate
-    }
-    
-    func addDateOneDay() -> Date? {
-        guard let adjustedDate = Calendar.current.date(byAdding: .day, value: 1, to: self) else { return nil }
-        return adjustedDate
-    }
+    }       
 }

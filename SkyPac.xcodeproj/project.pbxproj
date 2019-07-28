@@ -11,7 +11,6 @@
 		9D66713022EC30F6003919BF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712522EC30F5003919BF /* APIError.swift */; };
 		9D66713122EC30F6003919BF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712622EC30F5003919BF /* Result.swift */; };
 		9D66713222EC30F6003919BF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712722EC30F5003919BF /* HTTPMethods.swift */; };
-		9D66713322EC30F6003919BF /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712822EC30F5003919BF /* NotesManager.swift */; };
 		9D66713422EC30F6003919BF /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712922EC30F5003919BF /* CustomError.swift */; };
 		9D66713522EC30F6003919BF /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712A22EC30F5003919BF /* Client.swift */; };
 		9D66713622EC30F6003919BF /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66712B22EC30F5003919BF /* WebError.swift */; };
@@ -23,15 +22,17 @@
 		9DA0FAF722EAF5DE00C243BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAF522EAF5DE00C243BD /* Main.storyboard */; };
 		9DA0FAF922EAF5E200C243BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAF822EAF5E200C243BD /* Assets.xcassets */; };
 		9DA0FAFC22EAF5E200C243BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FAFA22EAF5E200C243BD /* LaunchScreen.storyboard */; };
-		9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */; };
-		9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */; };
-		9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */; };
+		9DA0FB0422EAF9C800C243BD /* FlightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB0322EAF9C800C243BD /* FlightTableViewCell.swift */; };
+		9DA0FB2022EAFD0B00C243BD /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0FB1F22EAFD0B00C243BD /* Flight.swift */; };
+		9DA0FB2322EB00B300C243BD /* FlightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0FB2222EB00B300C243BD /* FlightTableViewCell.xib */; };
 		AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68322EB10FF00BE2600 /* Date+Utils.swift */; };
 		AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C68522EB257C00BE2600 /* URL+Utils.swift */; };
 		AC06C69C22EDA77D00BE2600 /* Int+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */; };
 		AC06C69E22EDB48900BE2600 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */; };
 		AC06C6A022EDE29000BE2600 /* FlightDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */; };
 		AC06C6A222EDF7A700BE2600 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */; };
+		AC06C6A722EE356000BE2600 /* FlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C6A622EE356000BE2600 /* FlightManager.swift */; };
+		AC06C6A922EE40E300BE2600 /* FlightDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06C6A822EE40E300BE2600 /* FlightDetailVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,6 @@
 		9D66712522EC30F5003919BF /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = SkyPac/Networking/APIError.swift; sourceTree = SOURCE_ROOT; };
 		9D66712622EC30F5003919BF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = SkyPac/Networking/Result.swift; sourceTree = SOURCE_ROOT; };
 		9D66712722EC30F5003919BF /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPMethods.swift; path = SkyPac/Networking/HTTPMethods.swift; sourceTree = SOURCE_ROOT; };
-		9D66712822EC30F5003919BF /* NotesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesManager.swift; path = SkyPac/Networking/NotesManager.swift; sourceTree = SOURCE_ROOT; };
 		9D66712922EC30F5003919BF /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomError.swift; path = SkyPac/Networking/CustomError.swift; sourceTree = SOURCE_ROOT; };
 		9D66712A22EC30F5003919BF /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = SkyPac/Networking/Client.swift; sourceTree = SOURCE_ROOT; };
 		9D66712B22EC30F5003919BF /* WebError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebError.swift; path = SkyPac/Networking/WebError.swift; sourceTree = SOURCE_ROOT; };
@@ -53,15 +53,17 @@
 		9DA0FAF822EAF5E200C243BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DA0FAFB22EAF5E200C243BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DA0FAFD22EAF5E200C243BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPFlightTableViewCell.swift; sourceTree = "<group>"; };
-		9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SPFlight.swift; path = SkyPac/View/ViewControllers/SPFlight.swift; sourceTree = SOURCE_ROOT; };
-		9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SPFlightTableViewCell.xib; sourceTree = "<group>"; };
+		9DA0FB0322EAF9C800C243BD /* FlightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTableViewCell.swift; sourceTree = "<group>"; };
+		9DA0FB1F22EAFD0B00C243BD /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flight.swift; path = SkyPac/View/ViewControllers/Flight.swift; sourceTree = SOURCE_ROOT; };
+		9DA0FB2222EB00B300C243BD /* FlightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlightTableViewCell.xib; sourceTree = "<group>"; };
 		AC06C68322EB10FF00BE2600 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		AC06C68522EB257C00BE2600 /* URL+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Utils.swift"; sourceTree = "<group>"; };
 		AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Utils.swift"; sourceTree = "<group>"; };
 		AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailVC.swift; sourceTree = "<group>"; };
 		AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		AC06C6A622EE356000BE2600 /* FlightManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightManager.swift; sourceTree = "<group>"; };
+		AC06C6A822EE40E300BE2600 /* FlightDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDetailVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				9DA0FAF122EAF5DE00C243BD /* AppDelegate.swift */,
 				9DA0FB0722EAFA0D00C243BD /* Networking */,
+				AC06C6A522EE34ED00BE2600 /* FlightManager */,
 				9DA0FB0822EAFA2300C243BD /* Model */,
 				9DA0FB0522EAF9D800C243BD /* View */,
 				9DA0FB2122EAFDA200C243BD /* Utils */,
@@ -131,7 +134,6 @@
 				9D66712A22EC30F5003919BF /* Client.swift */,
 				9D66712922EC30F5003919BF /* CustomError.swift */,
 				9D66712722EC30F5003919BF /* HTTPMethods.swift */,
-				9D66712822EC30F5003919BF /* NotesManager.swift */,
 				9D66712D22EC30F6003919BF /* Path.swift */,
 				9D66712C22EC30F6003919BF /* Reachability.swift */,
 				9D66712E22EC30F6003919BF /* RequestBuilder.swift */,
@@ -145,7 +147,8 @@
 		9DA0FB0822EAFA2300C243BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9DA0FB1F22EAFD0B00C243BD /* SPFlight.swift */,
+				9DA0FB1F22EAFD0B00C243BD /* Flight.swift */,
+				AC06C6A822EE40E300BE2600 /* FlightDetailVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,8 +156,8 @@
 		9DA0FB0922EAFA3900C243BD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9DA0FAF322EAF5DE00C243BD /* ViewController.swift */,
 				AC06C69F22EDE29000BE2600 /* FlightDetailVC.swift */,
+				9DA0FAF322EAF5DE00C243BD /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,8 +165,8 @@
 		9DA0FB0A22EAFA4300C243BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9DA0FB0322EAF9C800C243BD /* SPFlightTableViewCell.swift */,
-				9DA0FB2222EB00B300C243BD /* SPFlightTableViewCell.xib */,
+				9DA0FB0322EAF9C800C243BD /* FlightTableViewCell.swift */,
+				9DA0FB2222EB00B300C243BD /* FlightTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -171,13 +174,21 @@
 		9DA0FB2122EAFDA200C243BD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AC06C68322EB10FF00BE2600 /* Date+Utils.swift */,
 				AC06C6A122EDF7A700BE2600 /* Array+Utils.swift */,
-				AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */,
+				AC06C68322EB10FF00BE2600 /* Date+Utils.swift */,
 				AC06C69B22EDA77D00BE2600 /* Int+Utils.swift */,
+				AC06C69D22EDB48900BE2600 /* UIImageView+Utils.swift */,
 				AC06C68522EB257C00BE2600 /* URL+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		AC06C6A522EE34ED00BE2600 /* FlightManager */ = {
+			isa = PBXGroup;
+			children = (
+				AC06C6A622EE356000BE2600 /* FlightManager.swift */,
+			);
+			path = FlightManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +251,7 @@
 			files = (
 				9DA0FAFC22EAF5E200C243BD /* LaunchScreen.storyboard in Resources */,
 				9DA0FAF922EAF5E200C243BD /* Assets.xcassets in Resources */,
-				9DA0FB2322EB00B300C243BD /* SPFlightTableViewCell.xib in Resources */,
+				9DA0FB2322EB00B300C243BD /* FlightTableViewCell.xib in Resources */,
 				9DA0FAF722EAF5DE00C243BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,23 +267,24 @@
 				9D66713622EC30F6003919BF /* WebError.swift in Sources */,
 				9D66713822EC30F6003919BF /* Path.swift in Sources */,
 				9D66713122EC30F6003919BF /* Result.swift in Sources */,
-				9DA0FB2022EAFD0B00C243BD /* SPFlight.swift in Sources */,
+				9DA0FB2022EAFD0B00C243BD /* Flight.swift in Sources */,
 				9DA0FAF422EAF5DE00C243BD /* ViewController.swift in Sources */,
 				AC06C69E22EDB48900BE2600 /* UIImageView+Utils.swift in Sources */,
+				AC06C6A722EE356000BE2600 /* FlightManager.swift in Sources */,
 				9DA0FAF222EAF5DE00C243BD /* AppDelegate.swift in Sources */,
 				9D66713422EC30F6003919BF /* CustomError.swift in Sources */,
 				9D66713522EC30F6003919BF /* Client.swift in Sources */,
 				9D66713722EC30F6003919BF /* Reachability.swift in Sources */,
-				9DA0FB0422EAF9C800C243BD /* SPFlightTableViewCell.swift in Sources */,
+				9DA0FB0422EAF9C800C243BD /* FlightTableViewCell.swift in Sources */,
 				AC06C69C22EDA77D00BE2600 /* Int+Utils.swift in Sources */,
 				AC06C6A022EDE29000BE2600 /* FlightDetailVC.swift in Sources */,
 				AC06C68422EB10FF00BE2600 /* Date+Utils.swift in Sources */,
-				9D66713322EC30F6003919BF /* NotesManager.swift in Sources */,
 				9D66713022EC30F6003919BF /* APIError.swift in Sources */,
 				AC06C68622EB257C00BE2600 /* URL+Utils.swift in Sources */,
 				9D66712F22EC30F6003919BF /* Resource.swift in Sources */,
 				AC06C6A222EDF7A700BE2600 /* Array+Utils.swift in Sources */,
 				9D66713922EC30F6003919BF /* RequestBuilder.swift in Sources */,
+				AC06C6A922EE40E300BE2600 /* FlightDetailVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

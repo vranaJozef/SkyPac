@@ -10,23 +10,22 @@ import Foundation
 
 extension Int {
     
-    func convertToDDMMYYYY() -> String {
+    func ddMMYYYYFormatter() -> String {
         let timeInterval = Double(self)
         let date = Date(timeIntervalSince1970: timeInterval)
-        return date.HHMMSS()
+        return date.hhMMSSFormatter()
+    }
+    
+    func toDate() -> Date {
+        let timeInterval = Double(self)
+        let date = Date(timeIntervalSince1970: timeInterval)
+        return date
     }
 }
 
-extension Array where Element: Hashable {
-    func removingDuplicates() -> [Element] {
-        var addedDict = [Element: Bool]()
-        
-        return filter {
-            addedDict.updateValue(true, forKey: $0) == nil
-        }
-    }
+extension Double {
     
-    mutating func removeDuplicates() {
-        self = self.removingDuplicates()
+    func toString() -> String {
+        return String(self)
     }
 }

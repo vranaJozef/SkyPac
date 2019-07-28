@@ -10,8 +10,8 @@ import Foundation
 
 class RequestBuilder {
     
-    class func getPopularFlights() -> Resource<SPFlight, APIError> {
-        var resource = Resource<SPFlight, APIError>(jsonDecoder: JSONDecoder(), path: "")
+    class func getFlights() -> Resource<Flight, APIError> {
+        var resource = Resource<Flight, APIError>(jsonDecoder: JSONDecoder(), path: "")
         resource.method = .get
         let dateFrom = Date().ddmmYYYYFormatter()
         let dateTo = Date().addOneDay()
