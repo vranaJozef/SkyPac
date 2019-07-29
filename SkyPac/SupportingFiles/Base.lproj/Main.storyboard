@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-Zr-NhL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1N-Zr-NhL">
                                 <rect key="frame" x="207" y="475" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -54,11 +54,13 @@
                         <constraints>
                             <constraint firstItem="pla-kw-kQc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2eW-na-MUL"/>
                             <constraint firstItem="pla-kw-kQc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="B6O-Y6-1YZ"/>
+                            <constraint firstItem="n1N-Zr-NhL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bbb-dy-Kdh"/>
                             <constraint firstItem="n1N-Zr-NhL" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JMD-58-fOt"/>
                             <constraint firstItem="IOR-5Y-RwQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W8O-e8-IBA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IOR-5Y-RwQ" secondAttribute="bottom" id="XlZ-xu-0YH"/>
                             <constraint firstItem="IOR-5Y-RwQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bR5-fE-DAa"/>
                             <constraint firstItem="IOR-5Y-RwQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lLS-rL-wHb"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n1N-Zr-NhL" secondAttribute="trailing" id="nVK-vM-i8e"/>
                             <constraint firstItem="n1N-Zr-NhL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uUh-Eh-es9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
