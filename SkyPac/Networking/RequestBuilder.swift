@@ -18,6 +18,7 @@ class RequestBuilder {
         let queryItems = ["v":"3",
                           "sort": "popularity",
                           "asc":"0",
+                          "partner":"picky",
                           "select_airlines_exclude":"true",
                           "fly_from": "SK",
                           "fly_to": "",
