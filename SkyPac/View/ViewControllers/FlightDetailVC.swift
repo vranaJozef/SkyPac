@@ -26,6 +26,7 @@ class FlightDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.flightInfoTableView.tableFooterView = UIView()
         if let flight = currentFlightInfo {
             let vm = FlightDetailVM.init(flight)
             vm.update()
